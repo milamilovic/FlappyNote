@@ -1,0 +1,122 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!244 &-1976701247316552744
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: b5248260fa773f44990a8956b30c8e3c
+  m_EffectName: Attenuation
+  m_MixLevel: 79db0036da50b7e428336fc3a8527852
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!241 &24100000
+AudioMixerController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: MyAudioMixer
+  m_OutputGroup: {fileID: 0}
+  m_MasterGroup: {fileID: 24300002}
+  m_Snapshots:
+  - {fileID: 24500006}
+  m_StartSnapshot: {fileID: 24500006}
+  m_SuspendThreshold: -80
+  m_EnableSuspend: 1
+  m_UpdateMode: 0
+  m_ExposedParameters:
+  - guid: 9b457180d1782a44bbef66b47efd7ad8
+    name: my_chuck
+  m_AudioMixerGroupViews:
+  - guids:
+    - 340d89000e26ca14cbac26ea26d253b4
+    - 629353ae39ef03145b18de3b03bf2f84
+    name: View
+  m_CurrentViewIndex: 0
+  m_TargetSnapshot: {fileID: 24500006}
+--- !u!243 &24300002
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Master
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: 340d89000e26ca14cbac26ea26d253b4
+  m_Children:
+  - {fileID: 8015086681847828902}
+  m_Volume: 0edc7132905d72c4db41097f1c6f35f5
+  m_Pitch: eca8f48fbf3cd5442967ebe4e28c2594
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: 24400004}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
+--- !u!244 &24400004
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 3f5dd0ebd6be6d744808fbc7cc1f449a
+  m_EffectName: Attenuation
+  m_MixLevel: 3943de5db10162443b8e7454b7fc4e6b
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!245 &24500006
+AudioMixerSnapshotController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Snapshot
+  m_AudioMixer: {fileID: 24100000}
+  m_SnapshotID: 1292494afa98b9f408864b9587899be6
+  m_FloatValues: {}
+  m_TransitionOverrides: {}
+--- !u!244 &3792106009955724360
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 46af42adbf6c70e478ac65d87f9d39e1
+  m_EffectName: ChucK
+  m_MixLevel: fdf276fc466036d4faa60a1cf168c830
+  m_Parameters:
+  - m_ParameterName: ChucK ID
+    m_GUID: 9b457180d1782a44bbef66b47efd7ad8
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!243 &8015086681847828902
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Chuck1
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: 629353ae39ef03145b18de3b03bf2f84
+  m_Children: []
+  m_Volume: 3199a6cfc20f3da4e8f7f36fd5c76c75
+  m_Pitch: ae275d71506d27a41b38ecbc404688f9
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: 3792106009955724360}
+  - {fileID: -1976701247316552744}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0

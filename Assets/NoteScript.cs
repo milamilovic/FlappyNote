@@ -1,6 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class NoteScript : MonoBehaviour
 {
@@ -9,12 +9,35 @@ public class NoteScript : MonoBehaviour
     public LogicScript logic;
     public bool noteActive = true;
     public bool started = false;
+    public AudioMixer mixerWithChuck;
+    private string myChuck1;
+    Thread updatingThread;
     // Start is called before the first frame update
     void Start()
     {
         logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicScript>();
         rigidbody.gravityScale = 0;
+        myChuck1 = "my_chuck";
+        Chuck.Manager.Initialize(mixerWithChuck, myChuck1);
+        Debug.Log("usao");
+        Chuck.Manager.RunCode(myChuck1,
+            @"
+            SinOsc foo => dac;
+            while( true )
+            {
+                Math.random2f( 300, 1000 ) => foo.freq;
+                100::ms => now;
+            }
+        "
+        );
+        
     }
+
+    private void OnApplicationQuit()
+    {
+        Chuck.Manager.Quit();
+    }
+
 
     // Update is called once per frame
     void Update()
